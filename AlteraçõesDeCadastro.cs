@@ -63,6 +63,12 @@ namespace PIM
             string turmaAntiga = aluno.Turma;
             Console.WriteLine("Nova Turma");
             aluno.Turma = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(aluno.Turma))
+                {
+                    Console.WriteLine("Preencha o campo!");
+                    Console.ReadKey();
+                    return;
+                }
 
             if(!ConfimarAcao())
                 {
@@ -107,6 +113,13 @@ namespace PIM
             string NomeAntigo = aluno.Nome;
             Console.Write("Novo nome: ");
             aluno.Nome = Console.ReadLine();
+
+            if(string.IsNullOrWhiteSpace(aluno.Nome))
+                {
+                    Console.WriteLine("O Campo não pode ser vazio");
+                    Console.ReadKey();
+                    Cadastro();
+                }
 
             if(!ConfimarAcao())
                 {

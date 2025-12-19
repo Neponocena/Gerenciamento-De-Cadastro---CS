@@ -31,8 +31,13 @@ namespace PIM
             Console.Clear();
 
             Console.Write("Matrícula: ");
-            int matricula = int.Parse(Console.ReadLine());
-
+            if(!int.TryParse(Console.ReadLine(), out int matricula))
+            {
+                Console.WriteLine("Digite apenas números.");
+                Console.ReadKey();
+                Alunos.Cadastrar();
+            }
+              
             if (alunos.Any(a => a.Matricula == matricula))
             {
                 Console.WriteLine(" Matrícula já existe!");
@@ -43,9 +48,23 @@ namespace PIM
 
             Console.Write("Nome do aluno: ");
             string nome = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(nome))
+            {
+                Console.WriteLine("O campo não pode ser vazio.");
+                Console.ReadKey();
+                Cadastrar();
+                return;
+            }
 
             Console.Write("Turma: ");
             string turma = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(turma))
+            {
+                Console.WriteLine("O Campo não pode ser vazio");
+                Console.ReadKey();
+                Cadastrar();
+                return;
+            }
 
             alunos.Add(new Aluno
             {

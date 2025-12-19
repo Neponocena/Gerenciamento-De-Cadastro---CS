@@ -17,3 +17,4 @@
 19/12/2025 14:21:35 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
 19/12/2025 14:21:50 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma ADS
 19/12/2025 14:22:11 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 15:15:30 - Aluno cadastrado: Matrícula 4587, Nome Santos, Turma ADS
