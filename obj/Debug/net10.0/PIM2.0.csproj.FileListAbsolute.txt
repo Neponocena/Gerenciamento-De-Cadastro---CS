@@ -12,3 +12,4 @@ C:\Users\45319282885\PIM2.0\obj\Debug\net10.0\refint\PIM2.0.dll
 C:\Users\45319282885\PIM2.0\obj\Debug\net10.0\PIM2.0.pdb
 C:\Users\45319282885\PIM2.0\obj\Debug\net10.0\PIM2.0.genruntimeconfig.cache
 C:\Users\45319282885\PIM2.0\obj\Debug\net10.0\ref\PIM2.0.dll
+C:\Users\45319282885\PIM2.0\obj\Debug\net10.0\PIM2.0.sourcelink.json

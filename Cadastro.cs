@@ -31,14 +31,7 @@ namespace PIM
             Console.Clear();
 
             Console.Write("Matrícula: ");
-            int matricula;
-            if (!int.TryParse(Console.ReadLine(),out matricula))
-            {
-                Console.WriteLine("Digite apenas números!");
-                Console.ReadKey();
-                Cadastrar();
-            }
-          
+            int matricula = int.Parse(Console.ReadLine());
 
             if (alunos.Any(a => a.Matricula == matricula))
             {
@@ -62,6 +55,8 @@ namespace PIM
             });
 
             Salvar();
+
+            Log.Registrar($"Aluno cadastrado: Matrícula {matricula}, Nome {nome}, Turma {turma}");
 
             Console.WriteLine($"{nome} ,cadastrado com sucesso!");
             Console.ReadKey();

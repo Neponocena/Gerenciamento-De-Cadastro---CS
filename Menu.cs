@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 namespace PIM
 {
@@ -6,9 +7,9 @@ namespace PIM
     {
         public static void Mostrar()
         {
-            try
-            {
-
+           try
+           {
+            
             Console.Clear();
 
             Console.WriteLine("=== GERENCIAMENTO DE CADASTRO ====");
@@ -20,6 +21,7 @@ namespace PIM
 
             int opcoes = int.Parse(Console.ReadLine());
 
+
             switch (opcoes)
             {
                 case 1 : Alunos.Cadastrar();break;
@@ -29,10 +31,14 @@ namespace PIM
             }
 
             }
+
             catch
             {
-                Console.WriteLine("Algo deu errado, digite uma opção valida");
+                Console.WriteLine("Digite uma opção valida");
+                Mostrar();
             }
+           }
+
+           
         }
     }
-}

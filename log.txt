@@ -1,0 +1,7 @@
+19/12/2025 11:02:08 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma GTI
+19/12/2025 11:09:12 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma GTI
+19/12/2025 11:38:55 - Nome alterado: Matrícula 4587, Paulo Santos -> Pedro Neponocena
+19/12/2025 11:53:05 - Aluno cadastrado: Matrícula 4590, Nome Heitor Neponocena, Turma ADS
+19/12/2025 13:16:28 - Aluno excluído: Matrícula  4587, Nome Pedro Neponocena, Turma GTI
+19/12/2025 13:17:21 - Aluno excluído: Matrícula  4588, Nome Santos, Turma ADS
+19/12/2025 13:19:37 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma 
