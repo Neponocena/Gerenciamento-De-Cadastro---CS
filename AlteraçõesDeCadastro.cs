@@ -4,7 +4,8 @@ using System.Linq;
 namespace PIM
 {
     public static class Alteração
-    {
+    {   
+        // Metodo de confirmação//
         private static bool ConfimarAcao()
         {
             Console.WriteLine("Tem certeza? (S/N):");
@@ -12,6 +13,7 @@ namespace PIM
 
             return resposta == "S";
         }
+       
         public static void Cadastro()
         {
             Console.Clear();
@@ -37,15 +39,21 @@ namespace PIM
                 default : Menu.Mostrar(); break;
             }
         }
-
+        // 
         public static void MudarAlunoTurma()
         {
                   
         {
             Console.Clear();
-
+            // Validação de números //
             Console.Write("Matrícula do aluno: ");
-            int matricula = int.Parse(Console.ReadLine());
+            int matricula;
+            int.TryParse(Console.ReadLine(), out matricula);
+                {
+                    Console.WriteLine("Digite um número valído");
+                    Console.ReadKey();
+                    MudarAlunoTurma();
+                }
             
             var aluno = Alunos.alunos
                 .FirstOrDefault(a => a.Matricula == matricula);
@@ -62,6 +70,7 @@ namespace PIM
             Console.WriteLine($"Turmas atuais: {aluno.Turma}");
             string turmaAntiga = aluno.Turma;
             Console.WriteLine("Nova Turma");
+            // Validação de Strings //
             aluno.Turma = Console.ReadLine();
             if(string.IsNullOrWhiteSpace(aluno.Turma))
                 {
@@ -69,7 +78,7 @@ namespace PIM
                     Console.ReadKey();
                     return;
                 }
-
+            // Metodo de confirmação //
             if(!ConfimarAcao())
                 {
                     Console.WriteLine("Operação cancelada");
@@ -93,9 +102,15 @@ namespace PIM
         {
         {
             Console.Clear();
-
+            // Validação de inteiros // 
             Console.Write("Matrícula do aluno: ");
-            int matricula = int.Parse(Console.ReadLine());
+            int matricula;
+            int.TryParse(Console.ReadLine(),out  matricula);
+            {
+                Console.WriteLine("Digite números valídos");
+                Console.ReadKey();
+                RenomearAluno();
+            }
           
 
             var aluno = Alunos.alunos
@@ -114,13 +129,14 @@ namespace PIM
             Console.Write("Novo nome: ");
             aluno.Nome = Console.ReadLine();
 
+            // Validação de Strings //
             if(string.IsNullOrWhiteSpace(aluno.Nome))
                 {
                     Console.WriteLine("O Campo não pode ser vazio");
                     Console.ReadKey();
                     Cadastro();
                 }
-
+            // Metodo de confirmação //
             if(!ConfimarAcao())
                 {
                     Console.WriteLine("Operação cancelada!");
@@ -130,7 +146,7 @@ namespace PIM
                 }
 
             Alunos.Salvar();
-
+            // Metodo LOG (Historico de operações) //
             Log.Registrar($"Nome alterado: Matrícula {aluno.Matricula}, {NomeAntigo} -> {aluno.Nome}");
 
             Console.WriteLine("Nome alterado com sucesso!");
@@ -146,9 +162,14 @@ namespace PIM
             Console.Clear();
 
             Console.Write("Matrícula do aluno: ");
-            int matricula = int.Parse(Console.ReadLine());
-
-
+            // Validação de inteiros //
+            int matricula;
+            int.TryParse(Console.ReadLine(),out matricula);
+            {
+                Console.WriteLine("Digite números validos");
+                Console.ReadKey();
+                ExcluirAluno();
+            }
             var aluno = Alunos.alunos
                 .FirstOrDefault(a => a.Matricula == matricula);
 

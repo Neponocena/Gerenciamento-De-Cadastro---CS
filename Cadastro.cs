@@ -29,7 +29,7 @@ namespace PIM
         public static void Cadastrar()
         {
             Console.Clear();
-
+            // Validação de números // 
             Console.Write("Matrícula: ");
             if(!int.TryParse(Console.ReadLine(), out int matricula))
             {
@@ -45,7 +45,7 @@ namespace PIM
                 Alunos.Cadastrar();
                 return;
             }
-
+            // Validação de String //
             Console.Write("Nome do aluno: ");
             string nome = Console.ReadLine();
             if(string.IsNullOrWhiteSpace(nome))
@@ -55,7 +55,7 @@ namespace PIM
                 Cadastrar();
                 return;
             }
-
+            // Validação de String //
             Console.Write("Turma: ");
             string turma = Console.ReadLine();
             if(string.IsNullOrWhiteSpace(turma))
