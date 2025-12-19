@@ -45,15 +45,8 @@ namespace PIM
             Console.Clear();
 
             Console.Write("Matrícula do aluno: ");
-            int matricula;
-            if(int.TryParse(Console.ReadLine(), out matricula))
-                {
-                    Console.WriteLine("Digite somente números");
-                    Console.ReadKey();
-                    return;
-                }
-          
-
+            int matricula = int.Parse(Console.ReadLine());
+            
             var aluno = Alunos.alunos
                 .FirstOrDefault(a => a.Matricula == matricula);
 
@@ -70,6 +63,14 @@ namespace PIM
             string turmaAntiga = aluno.Turma;
             Console.WriteLine("Nova Turma");
             aluno.Turma = Console.ReadLine();
+
+            if(!ConfimarAcao())
+                {
+                    Console.WriteLine("Operação cancelada");
+                    Console.ReadKey();
+                    Menu.Mostrar();
+                    return;
+                }
 
             Alunos.Salvar();
 
@@ -107,6 +108,14 @@ namespace PIM
             Console.Write("Novo nome: ");
             aluno.Nome = Console.ReadLine();
 
+            if(!ConfimarAcao())
+                {
+                    Console.WriteLine("Operação cancelada!");
+                    Console.ReadKey();
+                    Menu.Mostrar();
+                    return;
+                }
+
             Alunos.Salvar();
 
             Log.Registrar($"Nome alterado: Matrícula {aluno.Matricula}, {NomeAntigo} -> {aluno.Nome}");
@@ -137,14 +146,15 @@ namespace PIM
                
                 return;
             }
-            
-            if (!ConfimarAcao())
+
+            if(!ConfimarAcao())
             {
-                Console.WriteLine("Operação cancelada.");
+                Console.WriteLine("Operação cancelada");
                 Console.ReadKey();
                 Menu.Mostrar();
                 return;
             }
+            
             Log.Registrar($"Aluno excluído: Matrícula  {aluno.Matricula}, Nome {aluno.Nome}, Turma {aluno.Turma}");
             Alunos.alunos.Remove(aluno);
             Alunos.Salvar();

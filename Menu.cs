@@ -12,7 +12,7 @@ namespace PIM
             
             Console.Clear();
 
-            Console.WriteLine("=== GERENCIAMENTO DE CADASTRO ====");
+            Console.WriteLine("==== GERENCIAMENTO DE CADASTRO ====");
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("1 - Cadastrar Alunos");
             Console.WriteLine("2 - Listar alunos");

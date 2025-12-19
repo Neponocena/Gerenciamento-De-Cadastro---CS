@@ -5,3 +5,15 @@
 19/12/2025 13:16:28 - Aluno excluído: Matrícula  4587, Nome Pedro Neponocena, Turma GTI
 19/12/2025 13:17:21 - Aluno excluído: Matrícula  4588, Nome Santos, Turma ADS
 19/12/2025 13:19:37 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma 
+19/12/2025 14:00:31 - Turma alterada: Matrícula 4586,  -> 
+19/12/2025 14:03:16 - Turma alterada: Matrícula 4586,  -> ADS
+19/12/2025 14:12:28 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:13:13 - Aluno cadastrado: Matrícula 4586, Nome Pedro, Turma ADS
+19/12/2025 14:13:23 - Aluno excluído: Matrícula  4586, Nome Pedro, Turma ADS
+19/12/2025 14:15:31 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:15:46 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:18:57 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:19:03 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:21:35 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:21:50 - Aluno excluído: Matrícula  4586, Nome Pedro Paulo, Turma ADS
+19/12/2025 14:22:11 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma ADS
