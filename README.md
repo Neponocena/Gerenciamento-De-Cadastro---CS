@@ -19,5 +19,5 @@ A aplicação permite cadastrar, consultar, alterar e excluir alunos, garantindo
 
 
 👨‍💻 Autor
-Pedro Neponocena
+Pedro Neponocena - 
 Projeto para portfólio.
