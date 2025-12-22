@@ -29,17 +29,23 @@ namespace PIM
         public static void Cadastrar()
         {
             Console.Clear();
-        
-            Console.Write("Matrícula: ");
-            string entrada = Console.ReadLine();
-            // Conversão de string p/ int - Validação //
-            if(!int.TryParse(entrada, out int matricula))
+            Console.Write("Matrícula do aluno (Digite 0 para sair): ");
+            String entrada = Console.ReadLine();
+
+            if (!int.TryParse(entrada, out int matricula))
             {
-                Console.WriteLine("Digite apenas números");
+                Console.WriteLine("Digite apenas números.");
                 Console.ReadKey();
-                Alunos.Cadastrar();
+                Menu.Mostrar();
+                return;
+             }
+
+            if (matricula == 0)
+            {
+                Menu.Mostrar();
                 return;
             }
+
             // Validação de caracteres //
             if(entrada.Length != 4)
             {
@@ -67,25 +73,49 @@ namespace PIM
             }
             // Validação de String //
             Console.Write("Turma: ");
-            string turma = Console.ReadLine();
-            if(string.IsNullOrWhiteSpace(turma))
+            if(Turmas.turmas.Count == 0)
             {
-                Console.WriteLine("O Campo não pode ser vazio");
-                Console.ReadKey();
-                Cadastrar();
+                Console.WriteLine("Não há turmas cadastradas. Cadastre uma turma antes de cadastrar alunos");
+                Console.Read();
+                Menu.Mostrar();
                 return;
             }
+
+            Console.WriteLine("Escolha a turma do aluno");
+            for(int i = 0; i < Turmas.turmas.Count; i++)
+            {
+                Console.WriteLine($"{i + 1} - {Turmas.turmas[i].Nome}");
+            }
+
+            int opcaoTurma;
+            while(true)
+            {
+                Console.WriteLine("Opção");
+                string entradaTurma = Console.ReadLine();
+
+                if (!int.TryParse(entradaTurma, out opcaoTurma) || opcaoTurma < 1 || opcaoTurma > Turmas.turmas.Count)
+                {
+                    Console.WriteLine("Opção inválida , Digite novamente: ");
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            string TurmaSelecionada = Turmas.turmas[opcaoTurma - 1]. Nome;
+            
 
             alunos.Add(new Aluno
             {
                 Matricula = matricula,
                 Nome = nome,
-                Turma = turma
+                Turma = TurmaSelecionada
             });
 
             Salvar();
 
-            Log.Registrar($"Aluno cadastrado: Matrícula {matricula}, Nome {nome}, Turma {turma}");
+            Log.Registrar($"Aluno cadastrado: Matrícula {matricula}, Nome {nome}, Turma {TurmaSelecionada}");
 
             Console.WriteLine($"{nome} ,cadastrado com sucesso!");
             Console.ReadKey();
@@ -95,7 +125,7 @@ namespace PIM
         public static void Listagem()
         {
             Console.Clear();
-            Console.WriteLine("LISTA DE ALUNOS");
+            Console.WriteLine("LISTA DE ALUNOS (Digite 0 para sair):");
             Console.WriteLine("----------------");
 
             if (alunos.Count == 0)

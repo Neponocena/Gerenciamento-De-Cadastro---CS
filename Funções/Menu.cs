@@ -12,11 +12,13 @@ namespace PIM
             
             Console.Clear();
 
-            Console.WriteLine("==== GERENCIAMENTO DE CADASTRO ====");
+            Console.WriteLine("GERENCIAMENTO DE CADASTRO");
             Console.WriteLine("-------------------------------------");
-            Console.WriteLine("1 - Cadastrar Alunos");
-            Console.WriteLine("2 - Listar alunos");
-            Console.WriteLine("3 - Alterar Cadastro");
+            Console.WriteLine("1 - CADASTRAR ALUNOS");
+            Console.WriteLine("2 - LISTAR ALUNOS");
+            Console.WriteLine("3 - ALTERAR CADASTRO");
+            Console.WriteLine("4 - CADASTRAR TURMAS");
+            Console.WriteLine("5 - LISTAR TURMAS");
             Console.WriteLine("--------------------------------------");
 
             int opcoes = int.Parse(Console.ReadLine());
@@ -27,6 +29,8 @@ namespace PIM
                 case 1 : Alunos.Cadastrar();break;
                 case 2 : Alunos.Listagem();break;
                 case 3 : Alteração.Cadastro();break;
+                case 4 : Turmas.Cadastrar();break;
+                case 5 : Turmas.Listar();break;
                 default: Menu.Mostrar();break;
             }
 

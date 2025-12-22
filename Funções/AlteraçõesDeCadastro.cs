@@ -47,12 +47,19 @@ namespace PIM
         {
             Console.Clear();
             // Validação de números //
+            Console.WriteLine("Matrícula do aluno (Digite 0 para sair):");
             int matricula;
-            int.TryParse(Console.ReadLine(), out matricula);
+            if(!int.TryParse(Console.ReadLine(), out matricula))
                 {
                     Console.WriteLine("Digite um número valído");
                     Console.ReadKey();
                     MudarAlunoTurma();
+                }
+
+            if(matricula == 0)
+                {
+                   Cadastro();
+                    return;
                 }
             
             var aluno = Alunos.alunos
@@ -78,16 +85,24 @@ namespace PIM
                     Console.ReadKey();
                     return;
                 }
-            // Metodo de confirmação //
+
+            if(!Turmas.existe(aluno.Turma))
+                {
+                    Console.WriteLine("Turma não cadastrada");
+                    Console.ReadKey();
+                    MudarAlunoTurma();
+                }
+
+
+            //Metodo de confirmação 
             if(!ConfimarAcao())
                 {
                     Console.WriteLine("Operação cancelada");
                     Console.ReadKey();
                     Menu.Mostrar();
                     return;
-                }
-
-            Alunos.Salvar();
+                } 
+                Alunos.Salvar();
 
            Log.Registrar($"Turma alterada: Matrícula {aluno.Matricula}, {turmaAntiga} -> {aluno.Turma}");
 
@@ -103,16 +118,21 @@ namespace PIM
         {
             Console.Clear();
             // Validação de inteiros // 
-            Console.Write("Matrícula do aluno: ");
+            Console.Write("Matrícula do aluno (Digite 0 para sair): ");
             
             int matricula;
-            int.TryParse(Console.ReadLine(),out  matricula);
+            if(!int.TryParse(Console.ReadLine(),out  matricula))
             {
                 Console.WriteLine("Digite uma matrícula valída");
                 Console.ReadKey();
                 RenomearAluno();
             }
-          
+
+            if(matricula == 0)
+                {
+                    Cadastro();
+                    return;
+                }
 
             var aluno = Alunos.alunos
                 .FirstOrDefault(a => a.Matricula == matricula);
@@ -162,15 +182,23 @@ namespace PIM
         
             Console.Clear();
 
-            Console.Write("Matrícula do aluno: ");
+            Console.Write("Matrícula do aluno (Digite 0 para sair): ");
             // Validação de inteiros //
-            int matricula;
-            int.TryParse(Console.ReadLine(),out matricula);
+
+
+            if (!int.TryParse(Console.ReadLine(), out int matricula))
             {
-                Console.WriteLine("Digite números validos");
+                Console.WriteLine("Digite apenas números.");
                 Console.ReadKey();
-                ExcluirAluno();
+                return;
             }
+
+            if (matricula == 0)
+            {
+                Menu.Mostrar();
+                return;
+            }
+
             var aluno = Alunos.alunos
                 .FirstOrDefault(a => a.Matricula == matricula);
 
@@ -207,7 +235,7 @@ namespace PIM
             Console.WriteLine("== Historico de Operações === ");
             Console.WriteLine("---------------------------------");
             foreach (var linha in File.ReadAllLines("log.txt"))
-                Console.WriteLine(linha);
+            Console.WriteLine(linha);
             Console.ReadKey();
             Cadastro();
         }
