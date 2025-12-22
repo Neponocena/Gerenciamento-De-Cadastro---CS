@@ -29,15 +29,25 @@ namespace PIM
         public static void Cadastrar()
         {
             Console.Clear();
-            // Validação de números // 
+        
             Console.Write("Matrícula: ");
-            if(!int.TryParse(Console.ReadLine(), out int matricula))
+            string entrada = Console.ReadLine();
+            // Conversão de string p/ int - Validação //
+            if(!int.TryParse(entrada, out int matricula))
             {
-                Console.WriteLine("Digite apenas números.");
+                Console.WriteLine("Digite apenas números");
                 Console.ReadKey();
                 Alunos.Cadastrar();
+                return;
             }
-              
+            // Validação de caracteres //
+            if(entrada.Length != 4)
+            {
+                Console.WriteLine("A matrícula deve ter exatamente 4 números");
+                Console.ReadKey();
+                Cadastrar();
+            }
+
             if (alunos.Any(a => a.Matricula == matricula))
             {
                 Console.WriteLine(" Matrícula já existe!");

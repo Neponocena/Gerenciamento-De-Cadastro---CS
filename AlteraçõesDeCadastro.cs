@@ -5,7 +5,7 @@ namespace PIM
 {
     public static class Alteração
     {   
-        // Metodo de confirmação//
+        // Metodo de confirmação //
         private static bool ConfimarAcao()
         {
             Console.WriteLine("Tem certeza? (S/N):");
@@ -14,6 +14,7 @@ namespace PIM
             return resposta == "S";
         }
        
+
         public static void Cadastro()
         {
             Console.Clear();
@@ -39,14 +40,13 @@ namespace PIM
                 default : Menu.Mostrar(); break;
             }
         }
-        // 
+         
         public static void MudarAlunoTurma()
         {
                   
         {
             Console.Clear();
             // Validação de números //
-            Console.Write("Matrícula do aluno: ");
             int matricula;
             int.TryParse(Console.ReadLine(), out matricula);
                 {
@@ -104,10 +104,11 @@ namespace PIM
             Console.Clear();
             // Validação de inteiros // 
             Console.Write("Matrícula do aluno: ");
+            
             int matricula;
             int.TryParse(Console.ReadLine(),out  matricula);
             {
-                Console.WriteLine("Digite números valídos");
+                Console.WriteLine("Digite uma matrícula valída");
                 Console.ReadKey();
                 RenomearAluno();
             }
