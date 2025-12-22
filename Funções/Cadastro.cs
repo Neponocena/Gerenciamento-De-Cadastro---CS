@@ -90,7 +90,9 @@ namespace PIM
             int opcaoTurma;
             while(true)
             {
-                Console.WriteLine("Opção");
+                Console.WriteLine("");
+                Console.WriteLine("Opção:");
+                Console.WriteLine("");
                 string entradaTurma = Console.ReadLine();
 
                 if (!int.TryParse(entradaTurma, out opcaoTurma) || opcaoTurma < 1 || opcaoTurma > Turmas.turmas.Count)

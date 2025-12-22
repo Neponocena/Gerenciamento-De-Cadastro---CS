@@ -19,7 +19,20 @@ namespace PIM
         {
             Console.Clear();
 
-            Console.WriteLine("===== Alterar Cadastro =====");
+            Console.WriteLine(@"
+░█████╗░██╗░░░░░████████╗███████╗██████╗░░█████╗░██████╗░
+██╔══██╗██║░░░░░╚══██╔══╝██╔════╝██╔══██╗██╔══██╗██╔══██╗
+███████║██║░░░░░░░░██║░░░█████╗░░██████╔╝███████║██████╔╝
+██╔══██║██║░░░░░░░░██║░░░██╔══╝░░██╔══██╗██╔══██║██╔══██╗
+██║░░██║███████╗░░░██║░░░███████╗██║░░██║██║░░██║██║░░██║
+╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝
+
+░█████╗░░█████╗░██████╗░░█████╗░░██████╗████████╗██████╗░░█████╗░
+██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
+██║░░╚═╝███████║██║░░██║███████║╚█████╗░░░░██║░░░██████╔╝██║░░██║
+██║░░██╗██╔══██║██║░░██║██╔══██║░╚═══██╗░░░██║░░░██╔══██╗██║░░██║
+╚█████╔╝██║░░██║██████╔╝██║░░██║██████╔╝░░░██║░░░██║░░██║╚█████╔╝
+░╚════╝░╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░");
             Console.WriteLine("----------------------------");
             Console.WriteLine("1 - Mudar Aluno de Turma");
             Console.WriteLine("2 - Alterar Nome do Aluno");
@@ -76,22 +89,45 @@ namespace PIM
             Console.WriteLine($"Aluno: {aluno.Nome}");
             Console.WriteLine($"Turmas atuais: {aluno.Turma}");
             string turmaAntiga = aluno.Turma;
-            Console.WriteLine("Nova Turma");
-            // Validação de Strings //
-            aluno.Turma = Console.ReadLine();
-            if(string.IsNullOrWhiteSpace(aluno.Turma))
-                {
-                    Console.WriteLine("Preencha o campo!");
-                    Console.ReadKey();
-                    return;
-                }
 
-            if(!Turmas.existe(aluno.Turma))
+            // verifica se há turmas cadastradas 
+            Console.Write("Turma: ");
+            if(Turmas.turmas.Count == 0)
+            {
+                Console.WriteLine("Não há turmas cadastradas. Cadastre uma turma antes de cadastrar alunos");
+                Console.Read();
+                Menu.Mostrar();
+                return;
+            }
+
+            // Lista as turmas
+            Console.WriteLine("Escolha a turma do aluno");
+            for(int i = 0; i < Turmas.turmas.Count; i++)
+            {
+                Console.WriteLine($"{i + 1} - {Turmas.turmas[i].Nome}");
+            }
+
+
+            int opcaoTurma;
+            while(true)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Opção:");
+                Console.WriteLine("");
+                string entradaTurma = Console.ReadLine();
+
+                if (!int.TryParse(entradaTurma, out opcaoTurma) || opcaoTurma < 1 || opcaoTurma > Turmas.turmas.Count)
                 {
-                    Console.WriteLine("Turma não cadastrada");
-                    Console.ReadKey();
-                    MudarAlunoTurma();
+                    Console.WriteLine("Opção inválida , Digite novamente: ");
                 }
+                else
+                {
+                    break;
+                }
+            }
+
+            // atribui a turma selecionada 
+            aluno.Turma = Turmas.turmas[opcaoTurma - 1].Nome;
 
 
             //Metodo de confirmação 

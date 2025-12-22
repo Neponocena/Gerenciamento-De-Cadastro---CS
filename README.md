@@ -1,21 +1,29 @@
-Este projeto consiste em uma aplicação de console desenvolvida em C#, com foco no gerenciamento de alunos e turmas, aplicando conceitos fundamentais de Programação Orientada a Objetos (POO) e persistência de dados em arquivos.
+Sistema em C# para gerenciar alunos e turmas. Permite cadastrar, listar, alterar e excluir alunos, além de cadastrar turmas e manter um histórico de operações.
+--------------------------------------------------------------------------------------------
+Funcionalidades:
 
-A aplicação permite cadastrar, consultar, alterar e excluir alunos, garantindo regras de negócio como unicidade de matrícula, validação de entradas do usuário e controle de vínculo entre alunos e turmas.
+Turmas: cadastrar, listar e evitar duplicidade.
 
+Alunos: cadastrar com matrícula, nome e turma existente; listar alunos; alterar nome ou turma; excluir.
 
-    🔧 Funcionalidades:
+Validações: matrícula numérica de 4 dígitos, campos obrigatórios, seleção apenas de turmas cadastradas.
 
-    Cadastrar alunos (matrícula, nome e turma)
+Histórico: registra todas as operações em log.txt.
 
-    Listar alunos cadastrados
+Arquivos
 
-    Alterar nome e turma do aluno
+alunos.txt → dados dos alunos.
 
-    Excluir aluno com confirmação
+turmas.txt → lista de turmas.
 
-    Registrar todas as operações em log
+log.txt → histórico de operações.
+------------------------------------------------------
 
-    Visualizar histórico de operações
+Tecnologias
+
+C# | .NET 10.0
+
+IDE: Visual Studio ou VS Code
 
 
 👨‍💻 Autor

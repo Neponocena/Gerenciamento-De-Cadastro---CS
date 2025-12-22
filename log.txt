@@ -39,3 +39,12 @@
 22/12/2025 15:42:37 - Aluno cadastrado: Matrícula 4586, Nome Heitor Santos, Turma ADS
 22/12/2025 15:43:04 - Turma alterada: Matrícula 4586, ADS -> ASS
 22/12/2025 15:44:34 - Aluno excluído: Matrícula  4586, Nome Heitor Santos, Turma ASS
+22/12/2025 16:04:39 - Turma cadastrada: Eng.Software
+22/12/2025 16:09:28 - Aluno cadastrado: Matrícula 4586, Nome Heitor, Turma Engenharia de Software
+22/12/2025 16:17:45 - Turma alterada: Matrícula 4586, Engenharia de Software -> Engenharia de Software
+22/12/2025 16:18:29 - Turma alterada: Matrícula 4587, ADS -> ADS
+22/12/2025 16:18:50 - Turma alterada: Matrícula 4586, Engenharia de Software -> Engenharia de Software
+22/12/2025 16:30:01 - Turma alterada: Matrícula 4587, ADS -> Gestão de tecnologia
+22/12/2025 16:43:37 - Nome alterado: Matrícula 4587, Paulo -> Pedro Paulo
+22/12/2025 16:45:49 - Aluno cadastrado: Matrícula 4589, Nome Gustavo, Turma Gestão de tecnologia
+22/12/2025 16:46:33 - Turma alterada: Matrícula 4589, Gestão de tecnologia -> Gestão de tecnologia
