@@ -21,7 +21,7 @@ namespace PIM
 
         public static class Turmas
     {
-        public const string CAMINHO = "turmas.txt";
+        public const string CAMINHO = "Dados/turmas.txt";
 
         public static List <Turma> turmas = Carregar();
 
@@ -81,7 +81,7 @@ namespace PIM
         {
             Console.Clear();
 
-            Console.WriteLine("=== LISTA DE TURMAS ===");
+            Console.WriteLine("=== LISTA DE TURMAS === (0 PARA SAIR)");
             Console.WriteLine("------------------------");
 
             if(turmas.Count == 0)

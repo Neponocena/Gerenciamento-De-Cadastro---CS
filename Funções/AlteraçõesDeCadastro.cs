@@ -20,19 +20,16 @@ namespace PIM
             Console.Clear();
 
             Console.WriteLine(@"
-░█████╗░██╗░░░░░████████╗███████╗██████╗░░█████╗░██████╗░
-██╔══██╗██║░░░░░╚══██╔══╝██╔════╝██╔══██╗██╔══██╗██╔══██╗
-███████║██║░░░░░░░░██║░░░█████╗░░██████╔╝███████║██████╔╝
-██╔══██║██║░░░░░░░░██║░░░██╔══╝░░██╔══██╗██╔══██║██╔══██╗
-██║░░██║███████╗░░░██║░░░███████╗██║░░██║██║░░██║██║░░██║
-╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝
 
-░█████╗░░█████╗░██████╗░░█████╗░░██████╗████████╗██████╗░░█████╗░
-██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
-██║░░╚═╝███████║██║░░██║███████║╚█████╗░░░░██║░░░██████╔╝██║░░██║
-██║░░██╗██╔══██║██║░░██║██╔══██║░╚═══██╗░░░██║░░░██╔══██╗██║░░██║
-╚█████╔╝██║░░██║██████╔╝██║░░██║██████╔╝░░░██║░░░██║░░██║╚█████╔╝
-░╚════╝░╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░");
+█▀ █ █▀ ▀█▀ █▀▀ █▀▄▀█ ▄▀█   █▀▄ █▀▀   █▀▀ █▀▀ █▀█ █▀▀ █▄░█ █▀▀ █ ▄▀█ █▀▄▀█ █▀▀ █▄░█ ▀█▀ █▀█   █▀▀ █▀ █▀▀ █▀█ █░░ ▄▀█ █▀█
+▄█ █ ▄█ ░█░ ██▄ █░▀░█ █▀█   █▄▀ ██▄   █▄█ ██▄ █▀▄ ██▄ █░▀█ █▄▄ █ █▀█ █░▀░█ ██▄ █░▀█ ░█░ █▄█   ██▄ ▄█ █▄▄ █▄█ █▄▄ █▀█ █▀▄");
+
+
+            Console.WriteLine("");
+
+            Console.WriteLine(@"
+▄▀█ █░░ ▀█▀ █▀▀ █▀█ ▄▀█ █▀█   █▀▀ ▄▀█ █▀▄ ▄▀█ █▀ ▀█▀ █▀█ █▀█
+█▀█ █▄▄ ░█░ ██▄ █▀▄ █▀█ █▀▄   █▄▄ █▀█ █▄▀ █▀█ ▄█ ░█░ █▀▄ █▄█");
             Console.WriteLine("----------------------------");
             Console.WriteLine("1 - Mudar Aluno de Turma");
             Console.WriteLine("2 - Alterar Nome do Aluno");
@@ -48,8 +45,9 @@ namespace PIM
             {
                 case 1 : MudarAlunoTurma(); break;
                 case 2 : RenomearAluno(); break;
-                case 3 : ExcluirAluno();break;
-                case 4 : HistoricoOperações();break;
+                case 3 : BuscarPorNome();break;
+                case 4 : ExcluirAluno();break;
+                case 5 : HistoricoOperações(); break;
                 default : Menu.Mostrar(); break;
             }
         }
@@ -250,7 +248,7 @@ namespace PIM
             {
                 Console.WriteLine("Operação cancelada");
                 Console.ReadKey();
-                Menu.Mostrar();
+                Cadastro();
                 return;
             }
             
@@ -260,7 +258,7 @@ namespace PIM
 
             Console.WriteLine("Aluno excluído com sucesso!");
             Console.ReadKey();
-           Menu.Mostrar();
+            Cadastro();
         
     }
 
@@ -268,10 +266,47 @@ namespace PIM
         {
             Console.Clear();
 
-            Console.WriteLine("== Historico de Operações === ");
+            Console.WriteLine("== Historico de Operações === (DIGITE 0 PARA SAIR) ");
             Console.WriteLine("---------------------------------");
-            foreach (var linha in File.ReadAllLines("log.txt"))
+            foreach (var linha in File.ReadAllLines("Dados/log.txt"))
             Console.WriteLine(linha);
+            Console.ReadKey();
+            Cadastro();
+        }
+
+        public static void BuscarPorNome()
+        {
+            Console.Clear();
+            
+            Console.WriteLine("Digite o nome ou parte do nome do aluno");
+            string busca = Console.ReadLine();
+
+            if(string.IsNullOrWhiteSpace(busca))
+            {
+                Console.WriteLine("O Campo não pode ser vazio.");
+                Console.ReadKey();
+                Cadastro();
+            }
+
+            var resultados = Alunos.alunos
+                .Where(a => a.Nome.ToLower().Contains(busca.ToLower()))
+                .ToList();
+
+            Console.WriteLine();
+            Console.WriteLine("Resultado da busca");
+            Console.WriteLine("--------------------");
+
+            if(resultados.Count == 0)
+            {
+                Console.WriteLine("Nenhum aluno encontrado.");
+            }
+            else
+            {
+                foreach (var a in resultados)
+                {
+                    Console.WriteLine($"{a.Matricula} | Nome: {a.Nome} | Turma: {a.Turma}");
+                }
+            }
             Console.ReadKey();
             Cadastro();
         }

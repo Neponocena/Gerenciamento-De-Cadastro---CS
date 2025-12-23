@@ -6,7 +6,7 @@ namespace PIM
 {
     public static class Alunos
     {
-        public const string CAMINHO = "alunos.txt";
+        public const string CAMINHO = "Dados/alunos.txt";
 
         public static List<Aluno> alunos = Carregar();
 

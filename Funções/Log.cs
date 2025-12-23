@@ -5,7 +5,7 @@ namespace PIM
 {
     public static class Log
     {
-        public const string CAMINHO = "log.txt";
+        public const string CAMINHO = "Dados/log.txt";
 
         public static void Registrar(string mensagem)
         {

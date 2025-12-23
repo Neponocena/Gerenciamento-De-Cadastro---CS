@@ -1,0 +1,4 @@
+23/12/2025 10:25:04 - Turma cadastrada: Engenharia de Software
+23/12/2025 10:25:31 - Aluno cadastrado: Matrícula 4586, Nome Pedro Paulo, Turma Engenharia de Software
+23/12/2025 10:26:33 - Turma cadastrada: Analise e Desenvolvimento de Sistemas
+23/12/2025 10:28:09 - Turma cadastrada: Gestao de Tecnologia

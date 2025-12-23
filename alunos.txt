@@ -1,3 +1,0 @@
-4587;Pedro Paulo;Gestão de tecnologia
-4586;Heitor;Engenharia de Software
-4589;Gustavo;Gestão de tecnologia
