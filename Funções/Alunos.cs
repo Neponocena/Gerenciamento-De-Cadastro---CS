@@ -1,3 +1,5 @@
+namespace PIM
+{
 public static class Arquivo
 {
     public static void SalvarLista(string caminho, List<string> lista)
@@ -16,4 +18,5 @@ public static class Arquivo
 
         return new List<string>(File.ReadAllLines(caminho));
     }
+}
 }

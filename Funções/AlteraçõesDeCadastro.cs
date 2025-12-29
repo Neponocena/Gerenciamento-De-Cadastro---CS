@@ -58,7 +58,14 @@ namespace PIM
             Console.WriteLine("0 - VOLTAR");
             Console.WriteLine("----------------------------");
 
-            int opcoes = int.Parse(Console.ReadLine());
+            int opcoes;
+            if(int.TryParse(Console.ReadLine(),out opcoes ))
+            {
+                Console.WriteLine("Digite as opções valídas");
+                Console.ReadKey();
+                Cadastro();
+                return;
+            }
            
 
             switch(opcoes)
