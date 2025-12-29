@@ -64,6 +64,7 @@ namespace PIM
             // Validação de String //
             Console.Write("Nome do aluno: ");
             string nome = Console.ReadLine();
+            Console.WriteLine("");
             if(string.IsNullOrWhiteSpace(nome))
             {
                 Console.WriteLine("O campo não pode ser vazio.");
@@ -72,7 +73,6 @@ namespace PIM
                 return;
             }
             // Validação de String //
-            Console.Write("Turma: ");
             if(Turmas.turmas.Count == 0)
             {
                 Console.WriteLine("Não há turmas cadastradas. Cadastre uma turma antes de cadastrar alunos");
@@ -81,7 +81,8 @@ namespace PIM
                 return;
             }
 
-            Console.WriteLine("Escolha a turma do aluno");
+            Console.WriteLine("Escolha a turma do aluno:");
+            Console.WriteLine("");
             for(int i = 0; i < Turmas.turmas.Count; i++)
             {
                 Console.WriteLine($"{i + 1} - {Turmas.turmas[i].Nome}");
@@ -91,8 +92,7 @@ namespace PIM
             while(true)
             {
                 Console.WriteLine("");
-                Console.WriteLine("Opção:");
-                Console.WriteLine("");
+                Console.Write("Opção:");
                 string entradaTurma = Console.ReadLine();
 
                 if (!int.TryParse(entradaTurma, out opcaoTurma) || opcaoTurma < 1 || opcaoTurma > Turmas.turmas.Count)

@@ -44,7 +44,7 @@ namespace PIM
         {
             Console.Clear();
 
-            Console.WriteLine("Nome da turma (Digite 0 para sair):");
+            Console.Write("Nome da turma (Digite 0 para sair):");
             string nome = Console.ReadLine();
 
             if(nome == "0")

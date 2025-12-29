@@ -4,3 +4,6 @@
 23/12/2025 10:28:09 - Turma cadastrada: Gestao de Tecnologia
 23/12/2025 13:02:30 - Turma alterada: Matrícula 4586, Engenharia de Software -> Gestao de Tecnologia
 23/12/2025 13:07:07 - Aluno cadastrado: Matrícula 4587, Nome Heitor Santos, Turma Engenharia de Software
+29/12/2025 10:34:37 - Aluno cadastrado: Matrícula 4588, Nome Joao, Turma Analise e Desenvolvimento de Sistemas
+29/12/2025 11:03:55 - Turma alterada: Matrícula 4586, Gestao de Tecnologia -> Gestao de Tecnologia
+29/12/2025 11:06:54 - Nome alterado: Matrícula 4586, Pedro Paulo -> Pedro Paulo Santos

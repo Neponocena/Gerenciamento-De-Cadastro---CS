@@ -45,12 +45,14 @@ namespace PIM
             Console.WriteLine("-------------------------------------");
 
             Console.WriteLine("1 - CADASTRAR TURMAS");
+            Console.WriteLine("");
             Console.WriteLine("2 - lISTAR TURMAS");
+            Console.WriteLine("");
             Console.WriteLine("3 - CADASTRAR ALUNOS");
+            Console.WriteLine("");
             Console.WriteLine("4 - LISTAR ALUNOS");
+            Console.WriteLine("");
             Console.WriteLine("5 - ALTERAR CADASTRO");
-
-            Console.WriteLine();
 
             Console.WriteLine("--------------------------------------");
 
@@ -59,6 +61,7 @@ namespace PIM
                 {
                     Console.WriteLine("Digite uma opção valída");
                     Console.ReadKey();
+                    Menu.Mostrar();
                     return;
                 }
 
@@ -70,7 +73,7 @@ namespace PIM
                 case 3 : Alunos.Cadastrar();break;
                 case 4 : Alunos.Listagem();break;
                 case 5 : Alteracao.Cadastro();break;
-                default: break;
+                default: Menu.Mostrar();break;
             }
 
             }
