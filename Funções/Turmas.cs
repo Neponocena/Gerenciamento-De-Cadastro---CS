@@ -1,7 +1,7 @@
-using System.Reflection.Metadata;
+using System.Linq;
 using System;
-using System.Runtime.CompilerServices;
-using System.ComponentModel.Design;
+using System.Collections.Generic;
+
 namespace PIM
 {
     public class Turma
@@ -58,6 +58,7 @@ namespace PIM
                 Console.WriteLine("O Campo não pode ser vazio");
                 Console.ReadKey();
                 Cadastrar();
+                return;
             }
 
             if(turmas.Any(t => t.Nome == nome))
@@ -94,7 +95,7 @@ namespace PIM
             Menu.Mostrar();
         }
 
-        public static bool existe(string nome)
+        public static bool Existe(string nome)
         {
             return  turmas.Any(t => t.Nome == nome);
         }

@@ -21,8 +21,27 @@ namespace PIM
 
             Console.WriteLine(@"
 
-█▀ █ █▀ ▀█▀ █▀▀ █▀▄▀█ ▄▀█   █▀▄ █▀▀   █▀▀ █▀▀ █▀█ █▀▀ █▄░█ █▀▀ █ ▄▀█ █▀▄▀█ █▀▀ █▄░█ ▀█▀ █▀█   █▀▀ █▀ █▀▀ █▀█ █░░ ▄▀█ █▀█
-▄█ █ ▄█ ░█░ ██▄ █░▀░█ █▀█   █▄▀ ██▄   █▄█ ██▄ █▀▄ ██▄ █░▀█ █▄▄ █ █▀█ █░▀░█ ██▄ █░▀█ ░█░ █▄█   ██▄ ▄█ █▄▄ █▄█ █▄▄ █▀█ █▀▄");
+
+░██████╗██╗░██████╗████████╗███████╗███╗░░░███╗░█████╗░  ██████╗░███████╗
+██╔════╝██║██╔════╝╚══██╔══╝██╔════╝████╗░████║██╔══██╗  ██╔══██╗██╔════╝
+╚█████╗░██║╚█████╗░░░░██║░░░█████╗░░██╔████╔██║███████║  ██║░░██║█████╗░░
+░╚═══██╗██║░╚═══██╗░░░██║░░░██╔══╝░░██║╚██╔╝██║██╔══██║  ██║░░██║██╔══╝░░
+██████╔╝██║██████╔╝░░░██║░░░███████╗██║░╚═╝░██║██║░░██║  ██████╔╝███████╗
+╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚══════╝
+
+░██████╗░███████╗██████╗░███████╗███╗░░██╗░█████╗░██╗░█████╗░███╗░░░███╗███████╗███╗░░██╗████████╗░█████╗░
+██╔════╝░██╔════╝██╔══██╗██╔════╝████╗░██║██╔══██╗██║██╔══██╗████╗░████║██╔════╝████╗░██║╚══██╔══╝██╔══██╗
+██║░░██╗░█████╗░░██████╔╝█████╗░░██╔██╗██║██║░░╚═╝██║███████║██╔████╔██║█████╗░░██╔██╗██║░░░██║░░░██║░░██║
+██║░░╚██╗██╔══╝░░██╔══██╗██╔══╝░░██║╚████║██║░░██╗██║██╔══██║██║╚██╔╝██║██╔══╝░░██║╚████║░░░██║░░░██║░░██║
+╚██████╔╝███████╗██║░░██║███████╗██║░╚███║╚█████╔╝██║██║░░██║██║░╚═╝░██║███████╗██║░╚███║░░░██║░░░╚█████╔╝
+░╚═════╝░╚══════╝╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝░╚════╝░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░░╚════╝░
+
+███████╗░██████╗░█████╗░░█████╗░██╗░░░░░░█████╗░██████╗░
+██╔════╝██╔════╝██╔══██╗██╔══██╗██║░░░░░██╔══██╗██╔══██╗
+█████╗░░╚█████╗░██║░░╚═╝██║░░██║██║░░░░░███████║██████╔╝
+██╔══╝░░░╚═══██╗██║░░██╗██║░░██║██║░░░░░██╔══██║██╔══██╗
+███████╗██████╔╝╚█████╔╝╚█████╔╝███████╗██║░░██║██║░░██║
+╚══════╝╚═════╝░░╚════╝░░╚════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝");
 
 
             Console.WriteLine("");
@@ -56,7 +75,7 @@ namespace PIM
         public static void MudarAlunoTurma()
         {
                   
-        {
+        
             Console.Clear();
             // Validação de números //
             Console.WriteLine("Matrícula do aluno (Digite 0 para sair):");
@@ -130,7 +149,7 @@ namespace PIM
 
 
             //Metodo de confirmação 
-            if(!ConfimarAcao())
+            if(!ConfirmarAcao())
                 {
                     Console.WriteLine("Operação cancelada");
                     Console.ReadKey();
@@ -146,11 +165,11 @@ namespace PIM
             Menu.Mostrar();           
         }
 
-        }
+        
 
         public static void RenomearAluno()
         {
-        {
+        
             Console.Clear();
             // Validação de inteiros // 
             Console.Write("Matrícula do aluno (Digite 0 para sair): ");
@@ -181,7 +200,7 @@ namespace PIM
             }
 
             Console.WriteLine($"Nome atual: {aluno.Nome}");
-            string NomeAntigo = aluno.Nome;
+            string nomeAntigo = aluno.Nome;
             Console.Write("Novo nome: ");
             aluno.Nome = Console.ReadLine();
 
@@ -191,9 +210,10 @@ namespace PIM
                     Console.WriteLine("O Campo não pode ser vazio");
                     Console.ReadKey();
                     Cadastro();
+                    return;
                 }
             // Metodo de confirmação //
-            if(!ConfimarAcao())
+            if(!ConfirmarAcao())
                 {
                     Console.WriteLine("Operação cancelada!");
                     Console.ReadKey();
@@ -203,12 +223,12 @@ namespace PIM
 
             Alunos.Salvar();
             // Metodo LOG (Historico de operações) //
-            Log.Registrar($"Nome alterado: Matrícula {aluno.Matricula}, {NomeAntigo} -> {aluno.Nome}");
+            Log.Registrar($"Nome alterado: Matrícula {aluno.Matricula}, {nomeAntigo} -> {aluno.Nome}");
 
             Console.WriteLine("Nome alterado com sucesso!");
             Console.ReadKey();
             Menu.Mostrar();
-        }
+        
 
         }
 
@@ -245,7 +265,7 @@ namespace PIM
                 return;
             }
 
-            if(!ConfimarAcao())
+            if(!ConfirmarAcao())
             {
                 Console.WriteLine("Operação cancelada");
                 Console.ReadKey();

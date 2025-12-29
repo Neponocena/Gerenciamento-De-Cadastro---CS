@@ -51,7 +51,7 @@ namespace PIM
             {
                 Console.WriteLine("A matrícula deve ter exatamente 4 números");
                 Console.ReadKey();
-                Cadastrar();
+                return;
             }
 
             if (alunos.Any(a => a.Matricula == matricula))
@@ -105,19 +105,19 @@ namespace PIM
                 }
             }
 
-            string TurmaSelecionada = Turmas.turmas[opcaoTurma - 1]. Nome;
+            string turmaSelecionada = Turmas.turmas[opcaoTurma - 1]. Nome;
             
 
             alunos.Add(new Aluno
             {
                 Matricula = matricula,
                 Nome = nome,
-                Turma = TurmaSelecionada
+                Turma = turmaSelecionada
             });
 
             Salvar();
 
-            Log.Registrar($"Aluno cadastrado: Matrícula {matricula}, Nome {nome}, Turma {TurmaSelecionada}");
+            Log.Registrar($"Aluno cadastrado: Matrícula {matricula}, Nome {nome}, Turma {turmaSelecionada}");
 
             Console.WriteLine($"{nome} ,cadastrado com sucesso!");
             Console.ReadKey();
