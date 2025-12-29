@@ -42,7 +42,10 @@ namespace PIM
 █▀▀ █▀█ █▄░█ ▀█▀ █▀█ █▀█ █░░ █▀▀   █▀▄ █▀▀   █▀▀ ▄▀█ █▀▄ ▄▀█ █▀ ▀█▀ █▀█ █▀█
 █▄▄ █▄█ █░▀█ ░█░ █▀▄ █▄█ █▄▄ ██▄   █▄▀ ██▄   █▄▄ █▀█ █▄▀ █▀█ ▄█ ░█░ █▀▄ █▄█");
 
+            Console.WriteLine();
+
             Console.WriteLine("-------------------------------------");
+
 
             Console.WriteLine("1 - CADASTRAR TURMAS");
             Console.WriteLine("");
@@ -53,6 +56,8 @@ namespace PIM
             Console.WriteLine("4 - LISTAR ALUNOS");
             Console.WriteLine("");
             Console.WriteLine("5 - ALTERAR CADASTRO");
+            Console.WriteLine();
+            Console.WriteLine("0 - FECHAR APLICAÇÃO");
 
             Console.WriteLine("--------------------------------------");
 
@@ -73,7 +78,7 @@ namespace PIM
                 case 3 : Alunos.Cadastrar();break;
                 case 4 : Alunos.Listagem();break;
                 case 5 : Alteracao.Cadastro();break;
-                default: Menu.Mostrar();break;
+                default: System.Environment.Exit(0);break;
             }
 
             }
@@ -81,7 +86,7 @@ namespace PIM
             catch
             {
                 Console.WriteLine("Digite uma opção valida");
-                Mostrar();
+                Menu.Mostrar();
             }
            }
 

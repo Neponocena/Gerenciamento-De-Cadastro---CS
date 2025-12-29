@@ -49,6 +49,8 @@ namespace PIM
             Console.WriteLine(@"
 ▄▀█ █░░ ▀█▀ █▀▀ █▀█ ▄▀█ █▀█   █▀▀ ▄▀█ █▀▄ ▄▀█ █▀ ▀█▀ █▀█ █▀█
 █▀█ █▄▄ ░█░ ██▄ █▀▄ █▀█ █▀▄   █▄▄ █▀█ █▄▀ █▀█ ▄█ ░█░ █▀▄ █▄█");
+
+            Console.WriteLine();
             Console.WriteLine("----------------------------");
             Console.WriteLine("1 - MUDAR ALUNO DE TURMA");
             Console.WriteLine();
