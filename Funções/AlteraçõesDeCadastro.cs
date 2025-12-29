@@ -3,10 +3,10 @@ using System.Data.Common;
 using System.Linq;
 namespace PIM
 {
-    public static class Alteração
+    public static class Alteracao
     {   
         // Metodo de confirmação //
-        private static bool ConfimarAcao()
+        private static bool ConfirmarAcao()
         {
             Console.WriteLine("Tem certeza? (S/N):");
             string resposta = Console.ReadLine().ToUpper();
@@ -31,11 +31,12 @@ namespace PIM
 ▄▀█ █░░ ▀█▀ █▀▀ █▀█ ▄▀█ █▀█   █▀▀ ▄▀█ █▀▄ ▄▀█ █▀ ▀█▀ █▀█ █▀█
 █▀█ █▄▄ ░█░ ██▄ █▀▄ █▀█ █▀▄   █▄▄ █▀█ █▄▀ █▀█ ▄█ ░█░ █▀▄ █▄█");
             Console.WriteLine("----------------------------");
-            Console.WriteLine("1 - Mudar Aluno de Turma");
-            Console.WriteLine("2 - Alterar Nome do Aluno");
-            Console.WriteLine("3 - Excluir Aluno");
-            Console.WriteLine("4 - Histórico de Operações");
-            Console.WriteLine("0 - Voltar");
+            Console.WriteLine("1 - MUDAR ALUNO DE TURMA");
+            Console.WriteLine("2 - ALTERAR NOME DO ALUNO");
+            Console.WriteLine("3 - BUSCAR POR NOME");
+            Console.WriteLine("4 - EXCLUIR ALUNO");
+            Console.WriteLine("5 - HISTORICO DE OPERAÇÕES");
+            Console.WriteLine("0 - VOLTAR");
             Console.WriteLine("----------------------------");
 
             int opcoes = int.Parse(Console.ReadLine());
@@ -47,7 +48,7 @@ namespace PIM
                 case 2 : RenomearAluno(); break;
                 case 3 : BuscarPorNome();break;
                 case 4 : ExcluirAluno();break;
-                case 5 : HistoricoOperações(); break;
+                case 5 : HistoricoOperacoes(); break;
                 default : Menu.Mostrar(); break;
             }
         }
@@ -262,7 +263,7 @@ namespace PIM
         
     }
 
-        public static void HistoricoOperações()
+        public static void HistoricoOperacoes()
         {
             Console.Clear();
 
@@ -286,6 +287,7 @@ namespace PIM
                 Console.WriteLine("O Campo não pode ser vazio.");
                 Console.ReadKey();
                 Cadastro();
+                return;
             }
 
             var resultados = Alunos.alunos

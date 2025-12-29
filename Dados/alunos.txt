@@ -1,1 +1,2 @@
-4586;Pedro Paulo;Engenharia de Software
+4586;Pedro Paulo;Gestao de Tecnologia
+4587;Heitor Santos;Engenharia de Software
